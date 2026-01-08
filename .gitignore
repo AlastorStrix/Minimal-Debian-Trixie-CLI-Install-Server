@@ -1,14 +1,30 @@
-*.tar
-*.tar.*
-*.jar
-*.exe
-*.msi
-*.deb
-*.zip
-*.tgz
+# --- System & IDE ---
+.DS_Store
 *.log
-*.log.*
-*.sig
+.vscode/
+.idea/
 
-pkg/
-src/
+# --- Docker ---
+.env
+docker-compose.override.yml
+# Ignore data stored by containers 
+/data/
+
+# --- Networking & Security  ---
+# Ignore all private keys for SSH and VPN
+*.key
+*.pem
+privatekey
+# Ignore specific WireGuard config exports
+/config/peer*/
+/config/*.conf
+
+# --- Twingate ---
+# If you store your Connector tokens in a file
+twingate_tokens.txt
+service_key.json
+
+# --- Hardware/Scripts ---
+# Ignore temporary diagnostic outputs
+/scripts/*.tmp
+dock_status.log
